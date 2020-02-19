@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Home Weather Report</title>
+</head>
+<body>
+    <script src="part1.js"></script>
+    <form>
+        <fieldset>
+            <legend>Form for User Data</legend>
+            <label>Enter a City and/or a Zip code you'd like to display weather details about.</label>
+            <fieldset>
+                <label>Zip Code: 
+                    <input type="text" name="zipCode" id="zipCode">
+                </label>
+                <label>City: 
+                    <input type="text" name="city" id="city">
+                </label>
+                <input type="submit" name="submit" id="getWeather">
+            </fieldset>
+        </fieldset>
+    </form>
+
+    <table>
+        <caption>Current Weather</caption>
+        <tr>
+            <th>Description</th>
+            <th>Result</th>
+        </tr>
+        <tr>
+            <td>Temperature: </td>
+            <td id="temp"></td>
+        </tr>
+        <tr>
+            <td>Wind Speed: </td>
+            <td id="weatherSpeed"></td>
+        </tr>
+    </table>
+
+    <form>
+        <fieldset>
+            <legend>Form for User Data</legend>
+            <label>submit some POST data! </label>
+            <input type="text" name="writeIn" id="writeIn">
+            <input type="submit" name="submit" id="postSubmit">
+        </fieldset>
+    </form>
+    <h3>Response: </h3>
+    <ul>
+        <div id="responseOutput"></div>
+    </ul>
+</body>
+</html>
