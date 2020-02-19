@@ -41,13 +41,15 @@
         <fieldset>
             <legend>Form for User Data</legend>
             <label>submit some POST data! </label>
-            <input type="text" name="writeIn" id="writeIn">
-            <input type="submit" name="submit" id="postSubmit">
+            <input class="form-control" type="text" id="writeIn">
+            <button class="btn btn-default" type="submit" id="postSubmit">
+                POST submit
+            </button>
         </fieldset>
     </form>
     <h3>Response: </h3>
     <ul>
-        <div id="responseOutput"></div>
+        <div class="form-control" id="responseOutput"></div>
     </ul>
 </body>
 </html>

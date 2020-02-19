@@ -29,28 +29,26 @@ function searchWeather() {
         event.preventDefault();
     });
 
-    document.getElementById('postSubmit').addEventListener('click', function(event) {
-        var key = "ea86a4e01bf5414b259261012c1486c9"
-
+    document.getElementById("postSubmit").addEventListener('click', function(event) {
         var req = new XMLHttpRequest();
         var payload = {
             'writeOut': null
-        };
+        }
 
         payload.writeOut = document.getElementById("writeIn").value;
 
-        req.open('POST', 'http://httpbin.org/post', true);
-        req.setRequestHeader("Content-Type", "application/json");
-
+        req.open("POST", "http://httpbin.org/post", true);
+        req.setRequestHeader('Content-Type', 'application/json');
+        
         req.addEventListener('load', function() {
-            if (req.status >= 200 && req.status < 400) {
-                var response = JSON.parse(req.responseText);
-                displayResponse(response);
-            } else {
+			if (req.status >= 200 && req.status < 400) {
+				var response = JSON.parse(JSON.parse(req.responseText).data);
+				displayReponse(response);
+			} else {
                 console.log("Error in network request: " + req.statusText);
-            }
+			}
         });
-
+        
         req.send(JSON.stringify(payload));
         event.preventDefault();
     });
